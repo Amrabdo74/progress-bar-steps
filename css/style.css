@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.progres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 90px;
+}
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+.bars {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-top: 150px;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  .bars {
+      width: 90%;
+  }
+}
+.steps {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+
+}
+.bars::before {
+  content: '';
+  background-color: #e0e0e0;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 0.4rem;
+  width: 100%;
+}
+.active {
+  border: 3px solid #3498db;
+}
+.bar-color {
+  content: '';
+  background-color: #3498db;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 0.4rem;
+  transition: .3s ease;
+  /* width: 35%; */
+}
+.buttons {
+  margin-top: 150px;
+}
+.next {
+  background-color: #3498db;
+  border: none;
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+}
+.prev {
+  background-color: #e0e0e0; 
+  border: none;
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+  cursor: not-allowed;
+}
